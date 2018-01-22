@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { FETCH_FORECAST_REQUEST } from '../constants';
 
 import CurrentLocationInfo from './CurrentLocationInfo';
-import WeatherTable from './WeatherTable';
+import WeatherDetails from './WeatherDetails';
 
 class ForecastApp extends React.Component {
   componentDidMount() {
@@ -22,7 +22,7 @@ class ForecastApp extends React.Component {
           Displaying weather forecast for your current location since 2018.
         </p>
         <CurrentLocationInfo />
-        <WeatherTable />
+        <WeatherDetails />
       </div>
     )
   }
