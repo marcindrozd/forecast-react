@@ -1,13 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-import { get5DaysForecast } from '../api';
+import { FETCH_FORECAST_REQUEST } from '../constants';
 
 import CurrentLocationInfo from './CurrentLocationInfo';
 import WeatherTable from './WeatherTable';
 
-class App extends React.Component {
+class ForecastApp extends React.Component {
   componentDidMount() {
-    get5DaysForecast('Rybnik,pl');
+    const { fetchForecast } = this.props;
+    fetchForecast();
   }
 
   render() {
@@ -26,4 +28,12 @@ class App extends React.Component {
   }
 };
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchForecast: () => dispatch({ type: FETCH_FORECAST_REQUEST })
+  }
+}
+
+ForecastApp = connect(null, mapDispatchToProps)(ForecastApp);
+
+export default ForecastApp;
