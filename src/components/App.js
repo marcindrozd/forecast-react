@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="ForecastApp">
@@ -11,8 +11,8 @@ class App extends Component {
           Displaying weather forecast for your current location since 2018.
         </p>
       </div>
-    );
+    )
   }
-}
+};
 
 export default App;
