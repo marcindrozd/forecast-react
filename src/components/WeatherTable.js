@@ -22,7 +22,7 @@ class WeatherTable extends React.Component {
             <tr>
               {
                 forecastData.map(forecast => (
-                  <td key={forecast.date}>{forecast.degrees}</td>
+                  <td key={forecast.date}>{forecast.temp}</td>
                 ))
               }
             </tr>
@@ -35,7 +35,7 @@ class WeatherTable extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    forecastData: state.next5DaysForecast
+    forecastData: state.forecast
   }
 }
 

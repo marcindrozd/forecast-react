@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
 import currentLocation from './currentLocation';
-import next5DaysForecast from './next5DaysForecast';
+import forecast from './forecast';
 
 const reducer = combineReducers({
   currentLocation,
-  next5DaysForecast,
+  forecast,
 });
 
 export default reducer;
