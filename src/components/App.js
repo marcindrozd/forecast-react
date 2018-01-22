@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { get5DaysForecast } from '../api';
+import CurrentLocationInfo from './CurrentLocationInfo';
 
 class App extends React.Component {
   componentDidMount() {
@@ -15,6 +17,7 @@ class App extends React.Component {
         <p>
           Displaying weather forecast for your current location since 2018.
         </p>
+        <CurrentLocationInfo />
       </div>
     )
   }

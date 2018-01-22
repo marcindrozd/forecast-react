@@ -1,9 +1,9 @@
 import { createStore } from 'redux';
 
-import forecastApp from './reducers';
+import reducer from './reducers';
 
 const configureStore = () => {
-  const store = createStore(forecastApp);
+  const store = createStore(reducer);
   return store;
 };
 

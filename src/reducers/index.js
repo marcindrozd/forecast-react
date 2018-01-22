@@ -1,15 +1,11 @@
-const initialState = () => (
-  {
-    currentLocation: 'Rybnik,pl',
-    next5DaysForecast: [],
-  }
-)
+import { combineReducers } from 'redux';
 
-const forecastApp = (state = initialState(), { type }) => {
-  switch (type) {
-    default:
-      return state;
-  }
-};
+import currentLocation from './currentLocation';
+import next5DaysForecast from './next5DaysForecast';
 
-export default forecastApp;
+const reducer = combineReducers({
+  currentLocation,
+  next5DaysForecast,
+});
+
+export default reducer;
