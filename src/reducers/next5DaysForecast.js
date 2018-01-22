@@ -1,6 +1,4 @@
-const initialState = () => (
-  { next5DaysForecast: [] }
-);
+const initialState = () => [];
 
 const next5DaysForecast = (state = initialState(), { type }) => {
   switch (type) {

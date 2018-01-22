@@ -1,6 +1,4 @@
-const initialState = () => (
-  { currentLocation: 'Rybnik,pl' }
-);
+const initialState = () => 'Rybnik,pl';
 
 const currentLocation = (state = initialState(), { type }) => {
   switch (type) {
