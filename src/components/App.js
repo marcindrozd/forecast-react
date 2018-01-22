@@ -1,6 +1,11 @@
 import React from 'react';
+import { get5DaysForecast } from '../api';
 
 class App extends React.Component {
+  componentDidMount() {
+    get5DaysForecast('Rybnik,pl');
+  }
+
   render() {
     return (
       <div className="ForecastApp">
