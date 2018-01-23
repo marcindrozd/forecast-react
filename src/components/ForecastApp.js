@@ -5,6 +5,7 @@ import { FETCH_FORECAST_REQUEST } from '../constants';
 
 import CurrentLocationInfo from './CurrentLocationInfo';
 import ForecastDetails from './ForecastDetails';
+import ForecastChart from './ForecastChart';
 
 import './ForecastApp.css';
 
@@ -26,6 +27,7 @@ class ForecastApp extends React.Component {
 
         <CurrentLocationInfo />
         <ForecastDetails />
+        <ForecastChart />
       </div>
     )
   }
