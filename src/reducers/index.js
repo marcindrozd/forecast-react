@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
-import currentLocation from './currentLocation';
+import location from './location';
 import forecast, * as fromForecast from './forecast';
 
 const reducer = combineReducers({
-  currentLocation,
+  location,
   forecast,
 });
 

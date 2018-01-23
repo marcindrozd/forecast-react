@@ -2,7 +2,11 @@ import moment from 'moment';
 import groupBy from 'lodash/groupBy';
 import max from 'lodash/max';
 
-import { FETCH_FORECAST_SUCCESS, FETCH_FORECAST_FAILURE } from '../constants';
+import {
+  FETCH_FORECAST_SUCCESS,
+  FETCH_FORECAST_FAILURE,
+  FETCH_LOCATION_SUCCESS,
+} from '../constants';
 
 export const fetchForecastSuccess = (data) => {
   return {
@@ -17,6 +21,15 @@ export const fetchForecastFailure = (error) => {
   return {
     type: FETCH_FORECAST_FAILURE,
     error
+  }
+};
+
+export const fetchLocationSuccess = (data) => {
+  return {
+    type: FETCH_LOCATION_SUCCESS,
+    payload: {
+      location: data.city.name
+    }
   }
 };
 

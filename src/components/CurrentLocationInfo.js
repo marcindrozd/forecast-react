@@ -22,7 +22,7 @@ class CurrentLocationInfo extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    location: state.currentLocation
+    location: state.location.city
   }
 }
 

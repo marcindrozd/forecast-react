@@ -17,7 +17,7 @@ export const getUserLocation = async () => {
   catch (err) {
     console.log(err);
   }
-}
+};
 
 const getLocationAsync = () => (
   new Promise((resolve, reject) =>
