@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 import { FETCH_FORECAST_REQUEST } from '../constants';
 
 import CurrentLocationInfo from './CurrentLocationInfo';
-import WeatherDetails from './WeatherDetails';
+import ForecastDetails from './ForecastDetails';
+
+import './ForecastApp.css';
 
 class ForecastApp extends React.Component {
   componentDidMount() {
@@ -14,15 +16,16 @@ class ForecastApp extends React.Component {
 
   render() {
     return (
-      <div className="ForecastApp">
+      <div className='ForecastApp'>
         <header>
           <h1>Forecast App</h1>
+          <p className='subtitle'>
+            <em>Displaying weather forecast for your current location since 2018.</em>
+          </p>
         </header>
-        <p>
-          Displaying weather forecast for your current location since 2018.
-        </p>
+
         <CurrentLocationInfo />
-        <WeatherDetails />
+        <ForecastDetails />
       </div>
     )
   }

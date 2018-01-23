@@ -1,0 +1,11 @@
+.currentLocation {
+  width: 260px;
+  margin: 16px auto;
+  padding: 22px;
+  border: 1px solid #eee;
+  text-align: center;
+}
+
+.currentLocation .location {
+  font-weight: bold;
+}

@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import WeatherTable from './WeatherTable';
+import ForecastTable from './ForecastTable';
 import FetchError from './FetchError';
 import { getForecastData, getErrorMessage } from '../reducers';
 
-class WeatherDetails extends React.Component {
+class ForecastDetails extends React.Component {
   render() {
     const { forecastData, errorMessage } = this.props;
 
@@ -16,7 +16,7 @@ class WeatherDetails extends React.Component {
     }
 
     return (
-      <WeatherTable forecastData={forecastData} />
+      <ForecastTable forecastData={forecastData} />
     )
   }
 };
@@ -28,4 +28,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(WeatherDetails);
+export default connect(mapStateToProps)(ForecastDetails);
