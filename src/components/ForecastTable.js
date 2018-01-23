@@ -8,7 +8,7 @@ const ForecastTable = ({ forecastData }) => (
     <table>
       <thead>
         <tr>
-          <th>Date: </th>
+          <th>Date:</th>
           {
             forecastData.map(forecast => (
               <th key={forecast.date}>{forecast.date}</th>
