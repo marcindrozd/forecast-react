@@ -6,7 +6,16 @@ const UNITS = 'metric';
 
 const FORECAST_QUERY = `${BASE_URL}/forecast?APPID=${API_KEY}&units=${UNITS}`;
 
-export const get5DaysForecast = async (location) => {
-  const { status, statusText, data } = await axios.get(FORECAST_QUERY, { params: { q: location } });
+export const get5DaysForecastByCoords = async (location) => {
+  const { status, statusText, data } = await axios.get(
+    FORECAST_QUERY,
+    {
+      params: {
+        lat: location.latitude,
+        lon: location.longitude,
+      }
+    }
+  );
+
   return { status, statusText, data };
 };

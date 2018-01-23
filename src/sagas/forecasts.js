@@ -1,19 +1,15 @@
 import { call, put } from 'redux-saga/effects';
 
 import * as api from '../api';
+import * as utils from '../utils';
 import { fetchForecastSuccess, fetchForecastFailure } from '../actions';
 
-export function * fetchForecast() {
-  const location = 'Rybnik,pl';
-
+export function * fetchForecastByGeolocation() {
   try {
-    const { status, statusText, data } = yield call(api.get5DaysForecast, location);
+    const location = yield call(utils.getUserLocation);
+    const { data } = yield call(api.get5DaysForecastByCoords, location);
 
-    if (status === 200) {
-      yield put(fetchForecastSuccess(data));
-    } else {
-      yield put(fetchForecastFailure(statusText));
-    }
+    yield put(fetchForecastSuccess(data));
   } catch (error) {
     yield put(fetchForecastFailure(error));
   }

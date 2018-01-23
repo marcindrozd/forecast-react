@@ -2,10 +2,10 @@ import { takeEvery } from 'redux-saga/effects';
 
 import { FETCH_FORECAST_REQUEST } from '../constants';
 
-import { fetchForecast } from './forecasts';
+import { fetchForecastByGeolocation } from './forecasts';
 
 function * watchAsync() {
-  yield takeEvery(FETCH_FORECAST_REQUEST, fetchForecast);
+  yield takeEvery(FETCH_FORECAST_REQUEST, fetchForecastByGeolocation);
 };
 
 export default watchAsync;
