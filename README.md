@@ -16,10 +16,12 @@ A sample forecast application using [openweathermap.org API](https://openweather
 * React Testing
 * Axios
 * Geolocation
+* Chart.js
 
 ## Setup notes
 
 1. Clone repo
 1. Run `yarn`
+1. Either add OpenWeather API key as ENV variable `REACT_APP_FORECAST` or replace it directly in `/constants/index.js` file
 1. Start the server with `yarn start`
 1. Run tests with `yarn test`

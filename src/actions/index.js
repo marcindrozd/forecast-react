@@ -10,30 +10,30 @@ import {
   FETCH_FORECAST_END,
 } from '../constants';
 
-export const fetchForecastSuccess = (data) => {
-  return {
+export const fetchForecastSuccess = (data) => (
+  {
     type: FETCH_FORECAST_SUCCESS,
     payload: {
       data: parsedData(data)
     }
   }
-};
+);
 
-export const fetchForecastFailure = (error) => {
-  return {
+export const fetchForecastFailure = (error) => (
+  {
     type: FETCH_FORECAST_FAILURE,
     error
   }
-};
+);
 
-export const fetchLocationSuccess = (data) => {
-  return {
+export const fetchLocationSuccess = (data) => (
+  {
     type: FETCH_LOCATION_SUCCESS,
     payload: {
       location: data.city.name
     }
   }
-};
+);
 
 export const fetchForecastStart = () => (
   { type: FETCH_FORECAST_START }

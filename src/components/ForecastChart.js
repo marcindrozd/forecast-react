@@ -39,7 +39,7 @@ const mapStateToProps = (state) => {
   return {
     forecastData: getForecastData(state),
   }
-}
+};
 
 ForecastChart = connect(mapStateToProps)(ForecastChart);
 

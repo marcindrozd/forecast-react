@@ -24,6 +24,6 @@ const mapStateToProps = (state) => {
   return {
     location: state.location.city
   }
-}
+};
 
 export default connect(mapStateToProps)(CurrentLocationInfo);

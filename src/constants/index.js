@@ -1,5 +1,8 @@
-// Action types
+// Openweather API
+export const API_KEY = process.env.REACT_APP_FORECAST;
+export const BASE_API_URL = 'http://api.openweathermap.org/data/2.5';
 
+// Action types
 export const FETCH_FORECAST_REQUEST = 'FETCH_FORECAST_REQUEST';
 export const FETCH_FORECAST_SUCCESS = 'FETCH_FORECAST_SUCCESS';
 export const FETCH_FORECAST_FAILURE = 'FETCH_FORECAST_FAILURE';
