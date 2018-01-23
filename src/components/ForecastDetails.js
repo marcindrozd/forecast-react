@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import ForecastTable from './ForecastTable';
 import FetchError from './FetchError';
@@ -20,6 +21,11 @@ class ForecastDetails extends React.Component {
     )
   }
 };
+
+ForecastDetails.propTypes = {
+  forecastData: PropTypes.array,
+  errorMessage: PropTypes.string
+}
 
 const mapStateToProps = (state) => {
   return {

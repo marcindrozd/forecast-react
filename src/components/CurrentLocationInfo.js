@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import './CurrentLocationInfo.css';
 
@@ -18,6 +19,10 @@ class CurrentLocationInfo extends React.Component {
       </div>
     )
   }
+};
+
+CurrentLocationInfo.propTypes = {
+  location: PropTypes.string
 };
 
 const mapStateToProps = (state) => {

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './ForecastTable.css';
 
@@ -29,5 +30,9 @@ const ForecastTable = ({ forecastData }) => (
     </table>
   </div>
 );
+
+ForecastTable.propTypes = {
+  forecastData: PropTypes.array.isRequired
+}
 
 export default ForecastTable;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Line } from 'react-chartjs-2';
+import PropTypes from 'prop-types';
 
 import { getForecastData } from '../reducers';
 
@@ -33,6 +34,10 @@ class ForecastChart extends React.Component {
       </div>
     )
   }
+};
+
+ForecastChart.propTypes = {
+  forecastData: PropTypes.array.isRequired
 };
 
 const mapStateToProps = (state) => {

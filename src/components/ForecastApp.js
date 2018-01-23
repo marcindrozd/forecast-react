@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { FETCH_FORECAST_REQUEST } from '../constants';
 
@@ -29,6 +30,13 @@ class ForecastApp extends React.Component {
       </div>
     )
   }
+};
+
+ForecastApp.propTypes = {
+  isFetching: PropTypes.shape({
+    inProgress: PropTypes.bool.isRequired
+  }),
+  fetchForecast: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => {
