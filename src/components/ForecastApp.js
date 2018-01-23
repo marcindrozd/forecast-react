@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 
 import { FETCH_FORECAST_REQUEST } from '../constants';
 
-import CurrentLocationInfo from './CurrentLocationInfo';
-import ForecastDetails from './ForecastDetails';
-import ForecastChart from './ForecastChart';
+import Header from './Header';
+import ForecastInfo from './ForecastInfo';
+import Spinner from './Spinner';
 
 import './ForecastApp.css';
 
@@ -16,20 +16,24 @@ class ForecastApp extends React.Component {
   }
 
   render() {
+    const { isFetching } = this.props;
+
     return (
       <div className='ForecastApp'>
-        <header>
-          <h1>Forecast App</h1>
-          <p className='subtitle'>
-            <em>Displaying weather forecast for your current location since 2018.</em>
-          </p>
-        </header>
+        <Header />
 
-        <CurrentLocationInfo />
-        <ForecastDetails />
-        <ForecastChart />
+        { isFetching.inProgress
+          ? <Spinner />
+          : <ForecastInfo />
+        }
       </div>
     )
+  }
+};
+
+const mapStateToProps = (state) => {
+  return {
+    isFetching: state.isFetching
   }
 };
 
@@ -37,8 +41,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchForecast: () => dispatch({ type: FETCH_FORECAST_REQUEST })
   }
-}
+};
 
-ForecastApp = connect(null, mapDispatchToProps)(ForecastApp);
+ForecastApp = connect(mapStateToProps, mapDispatchToProps)(ForecastApp);
 
 export default ForecastApp;

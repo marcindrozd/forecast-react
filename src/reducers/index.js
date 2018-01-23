@@ -2,10 +2,12 @@ import { combineReducers } from 'redux';
 
 import location from './location';
 import forecast, * as fromForecast from './forecast';
+import isFetching from './isFetching';
 
 const reducer = combineReducers({
   location,
   forecast,
+  isFetching,
 });
 
 export default reducer;

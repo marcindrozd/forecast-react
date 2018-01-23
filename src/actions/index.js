@@ -6,6 +6,8 @@ import {
   FETCH_FORECAST_SUCCESS,
   FETCH_FORECAST_FAILURE,
   FETCH_LOCATION_SUCCESS,
+  FETCH_FORECAST_START,
+  FETCH_FORECAST_END,
 } from '../constants';
 
 export const fetchForecastSuccess = (data) => {
@@ -32,6 +34,14 @@ export const fetchLocationSuccess = (data) => {
     }
   }
 };
+
+export const fetchForecastStart = () => (
+  { type: FETCH_FORECAST_START }
+);
+
+export const fetchForecastEnd = () => (
+  { type: FETCH_FORECAST_END }
+);
 
 const parsedData = (data) => {
   const byDate = groupBy(data.list, (item) => (
