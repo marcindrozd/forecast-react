@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import ForecastTable from '../../components/ForecastTable';
+import ForecastTable from 'components/ForecastTable';
 
 const setup = () => {
   const props = {

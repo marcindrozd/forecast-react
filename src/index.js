@@ -5,7 +5,7 @@ import createSagaMiddleWare from 'redux-saga';
 
 import reducer from './reducers';
 import watchAsync from './sagas';
-import Root from './components/Root';
+import Root from 'components/Root';
 
 const sagaMiddleware = createSagaMiddleWare();
 const store = createStore(

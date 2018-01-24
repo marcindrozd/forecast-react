@@ -1,10 +1,11 @@
 import { put, call } from 'redux-saga/effects';
-import { fetchForecastByGeolocation } from '../../sagas/forecasts';
 import { testSaga } from 'redux-saga-test-plan';
 
-import * as types from '../../constants';
-import * as utils from '../../utils';
-import * as api from '../../api';
+import * as types from 'actions/types';
+import * as utils from 'utils';
+import * as api from 'api';
+
+import { fetchForecastByGeolocation } from 'sagas/forecast';
 
 describe('fetchForecastByGeolocation', () => {
   it('requests the forecast data and dispatches actions', () => {

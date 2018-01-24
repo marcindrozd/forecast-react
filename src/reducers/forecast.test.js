@@ -1,5 +1,5 @@
-import reducer from '../../reducers/forecast';
-import * as types from '../../constants';
+import reducer from './forecast';
+import * as types from 'actions/types';
 
 describe('forecast reducer', () => {
   it('should return the initial state', () => {
@@ -41,7 +41,7 @@ describe('forecast reducer', () => {
           }
         ]
       }
-    );
+      );
   });
 
   it('should handle FETCH_FORECAST_FAILURE', () => {
@@ -54,6 +54,6 @@ describe('forecast reducer', () => {
       {
         errorMessage: 'Something went wrong'
       }
-    );
+      );
   });
 });

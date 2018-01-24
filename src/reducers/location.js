@@ -1,4 +1,4 @@
-import { FETCH_LOCATION_SUCCESS } from '../constants';
+import { FETCH_LOCATION_SUCCESS } from '../actions/types';
 
 const initialState = () => (
   {

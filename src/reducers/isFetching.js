@@ -1,4 +1,4 @@
-import { FETCH_FORECAST_START, FETCH_FORECAST_END } from '../constants';
+import { FETCH_FORECAST_START, FETCH_FORECAST_END } from '../actions/types';
 
 const initialState = () => (
   { inProgress: false }

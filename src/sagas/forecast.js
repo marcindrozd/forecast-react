@@ -8,7 +8,7 @@ import {
   fetchLocationSuccess,
   fetchForecastStart,
   fetchForecastEnd,
-} from '../actions';
+} from '../actions/forecast';
 
 export function * fetchForecastByGeolocation() {
   try {

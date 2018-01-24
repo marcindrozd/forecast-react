@@ -1,5 +1,5 @@
-import * as actions from '../../actions';
-import * as types from '../../constants';
+import * as actions from './forecast';
+import * as types from './types';
 
 describe('fetchForecastStart', () => {
   it('should create an action informing about fetch start', () => {

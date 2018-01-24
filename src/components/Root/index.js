@@ -1,11 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 
-import ForecastApp from './ForecastApp';
+import App from 'components/App';
 
 const Root = ({ store }) => (
   <Provider store={store}>
-    <ForecastApp />
+    <App />
   </Provider>
 );
 

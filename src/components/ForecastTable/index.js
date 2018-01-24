@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './ForecastTable.css';
+import './styles.css';
 
 const ForecastTable = ({ forecastData }) => (
   <div className='forecastTable'>

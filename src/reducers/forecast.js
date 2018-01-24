@@ -1,4 +1,4 @@
-import { FETCH_FORECAST_SUCCESS, FETCH_FORECAST_FAILURE } from '../constants';
+import { FETCH_FORECAST_SUCCESS, FETCH_FORECAST_FAILURE } from '../actions/types';
 
 const initialState = () => (
   {
