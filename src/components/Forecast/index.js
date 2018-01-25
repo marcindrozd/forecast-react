@@ -7,7 +7,7 @@ import * as types from 'actions/types';
 import Spinner from 'components/Spinner';
 import ForecastDetails from 'components/ForecastDetails';
 
-import { getForecastData } from 'reducers';
+import { getForecastData, getIsFetchingStatus, getLocation } from 'reducers';
 
 class Forecast extends React.Component {
   componentDidMount() {
@@ -20,7 +20,7 @@ class Forecast extends React.Component {
 
     return (
       <div>
-        {isFetching.inProgress
+        { isFetching
           ? <Spinner />
           : <ForecastDetails location={location} forecastData={ forecastData } />
         }
@@ -30,9 +30,7 @@ class Forecast extends React.Component {
 };
 
 Forecast.propTypes = {
-  isFetching: PropTypes.shape({
-    inProgress: PropTypes.bool.isRequired
-  }),
+  isFetching: PropTypes.bool,
   location: PropTypes.string.isRequired,
   fetchForecast: PropTypes.func.isRequired,
   forecastData: PropTypes.array.isRequired,
@@ -40,8 +38,8 @@ Forecast.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    isFetching: state.isFetching,
-    location: state.location.city,
+    isFetching: getIsFetchingStatus(state),
+    location: getLocation(state),
     forecastData: getForecastData(state),
   }
 };

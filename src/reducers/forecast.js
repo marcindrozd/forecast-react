@@ -1,17 +1,17 @@
-import { FETCH_FORECAST_SUCCESS, FETCH_FORECAST_FAILURE } from '../actions/types';
+import * as types from 'actions/types';
 
 const initialState = () => (
   {
     errorMessage: null,
-    data: []
+    tempByDate: []
   }
 );
 
 const forecast = (state = initialState(), { type, payload, error }) => {
   switch (type) {
-    case FETCH_FORECAST_SUCCESS:
-      return { ...state, data: payload.data }
-    case FETCH_FORECAST_FAILURE:
+    case types.FETCH_FORECAST_SUCCESS:
+      return { ...state, tempByDate: payload.tempByDate }
+    case types.FETCH_FORECAST_FAILURE:
       return { ...state, errorMessage: error }
     default:
       return state;
@@ -20,5 +20,5 @@ const forecast = (state = initialState(), { type, payload, error }) => {
 
 export default forecast;
 
-export const getForecastData = (state) => state.data;
-export const getErrorMessage = (state) => state.errorMessage;
+export const getForecastData = state => state.tempByDate;
+export const getErrorMessage = state => state.errorMessage;

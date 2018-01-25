@@ -2,13 +2,13 @@ import moment from 'moment';
 import groupBy from 'lodash/groupBy';
 import max from 'lodash/max';
 
-import * as types from './types';
+import * as types from 'actions/types';
 
-export const fetchForecastSuccess = (data) => (
+export const fetchForecastSuccess = (forecastData) => (
   {
     type: types.FETCH_FORECAST_SUCCESS,
     payload: {
-      data: parsedData(data)
+      tempByDate: parsedData(forecastData)
     }
   }
 );
@@ -20,21 +20,17 @@ export const fetchForecastFailure = (error) => (
   }
 );
 
-export const fetchLocationSuccess = (data) => (
+export const fetchLocationSuccess = (locationData) => (
   {
     type: types.FETCH_LOCATION_SUCCESS,
     payload: {
-      location: data.city.name
+      location: locationData.city.name
     }
   }
 );
 
 export const fetchForecastStart = () => (
   { type: types.FETCH_FORECAST_START }
-);
-
-export const fetchForecastEnd = () => (
-  { type: types.FETCH_FORECAST_END }
 );
 
 const parsedData = (data) => {

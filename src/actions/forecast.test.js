@@ -1,5 +1,5 @@
-import * as actions from './forecast';
-import * as types from './types';
+import * as actions from 'actions/forecast';
+import * as types from 'actions/types';
 
 describe('fetchForecastStart', () => {
   it('should create an action informing about fetch start', () => {
@@ -23,7 +23,7 @@ describe('fetchForecastEnd', () => {
 
 describe('fetchLocationSuccess', () => {
   it('should create an action with city info', () => {
-    const data = {
+    const locationInfo = {
       city: {
         name: 'New York'
       }
@@ -36,42 +36,20 @@ describe('fetchLocationSuccess', () => {
       }
     };
 
-    expect(actions.fetchLocationSuccess(data)).toEqual(expectedAction);
+    expect(actions.fetchLocationSuccess(locationInfo)).toEqual(expectedAction);
   });
 });
 
 describe('fetchForecastSuccess', () => {
   it('should create an action with parsed forecast data', () => {
-    const data = {
+    const apiResponseItem = ({ dt, temp, text }) => ({ dt, dt_txt: text, main: { temp } });
+
+    const apiResponse = {
       list: [
-        {
-          dt: 1517065200,
-          main: {
-            temp: 10
-          },
-          dt_txt: "2018-01-27 15:00:00"
-        },
-        {
-          dt: 1517076000,
-          main: {
-            temp: 4
-          },
-          dt_txt: "2018-01-27 18:00:00"
-        },
-        {
-          dt: 1517119200,
-          main: {
-            temp: 6
-          },
-          dt_txt: "2018-01-28 06:00:00"
-        },
-        {
-          dt: 1517130000,
-          main: {
-            temp: 5
-          },
-          dt_txt: "2018-01-28 09:00:00"
-        },
+        apiResponseItem({ dt: 1517065200, temp: 10, text: '2018-01-27 15:00:00' }),
+        apiResponseItem({ dt: 1517076000, temp: 4, text: '2018-01-27 18:00:00' }),
+        apiResponseItem({ dt: 1517119200, temp: 6, text: '2018-01-28 06:00:00' }),
+        apiResponseItem({ dt: 1517130000, temp: 5, text: '2018-01-28 09:00:00' }),
       ],
       city: {
         name: 'Tokyo'
@@ -81,7 +59,7 @@ describe('fetchForecastSuccess', () => {
     const expectedAction = {
       type: types.FETCH_FORECAST_SUCCESS,
       payload: {
-        data: [
+        tempByDate: [
           {
             date: '27-01-2018',
             temp: 10
@@ -94,7 +72,7 @@ describe('fetchForecastSuccess', () => {
       }
     };
 
-    expect(actions.fetchForecastSuccess(data)).toEqual(expectedAction);
+    expect(actions.fetchForecastSuccess(apiResponse)).toEqual(expectedAction);
   });
 });
 

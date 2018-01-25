@@ -1,14 +1,13 @@
 import { call, put } from 'redux-saga/effects';
 
-import * as api from '../api';
-import * as utils from '../utils';
+import * as api from 'api';
+import * as utils from 'utils';
 import {
   fetchForecastSuccess,
   fetchForecastFailure,
   fetchLocationSuccess,
   fetchForecastStart,
-  fetchForecastEnd,
-} from '../actions/forecast';
+} from 'actions/forecast';
 
 export function * fetchForecastByGeolocation() {
   try {
@@ -19,9 +18,7 @@ export function * fetchForecastByGeolocation() {
 
     yield put(fetchLocationSuccess(data));
     yield put(fetchForecastSuccess(data));
-    yield put(fetchForecastEnd());
   } catch (error) {
     yield put(fetchForecastFailure(error));
-    yield put(fetchForecastEnd());
   }
 };

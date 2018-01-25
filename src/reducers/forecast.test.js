@@ -6,7 +6,7 @@ describe('forecast reducer', () => {
     expect(reducer(undefined, {})).toEqual(
       {
         errorMessage: null,
-        data: [],
+        tempByDate: [],
       }
     );
   });
@@ -16,7 +16,7 @@ describe('forecast reducer', () => {
       {
         type: types.FETCH_FORECAST_SUCCESS,
         payload: {
-          data: [
+          tempByDate: [
             {
               date: '27-01-2018',
               temp: 10
@@ -30,7 +30,7 @@ describe('forecast reducer', () => {
       }
     )).toEqual(
       {
-        data: [
+        tempByDate: [
           {
             date: '27-01-2018',
             temp: 10

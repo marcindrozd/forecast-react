@@ -1,4 +1,4 @@
-import { FETCH_FORECAST_START, FETCH_FORECAST_END } from '../actions/types';
+import * as types from 'actions/types';
 
 const initialState = () => (
   { inProgress: false }
@@ -6,9 +6,10 @@ const initialState = () => (
 
 const isFetching = (state = initialState(), { type }) => {
   switch (type) {
-    case FETCH_FORECAST_START:
+    case types.FETCH_FORECAST_START:
       return { ...state, inProgress: true };
-    case FETCH_FORECAST_END:
+    case types.FETCH_FORECAST_SUCCESS:
+    case types.FETCH_FORECAST_FAILURE:
       return { ...state, inProgress: false };
     default:
       return state;
@@ -16,3 +17,5 @@ const isFetching = (state = initialState(), { type }) => {
 };
 
 export default isFetching;
+
+export const getIsFetchingStatus = state => state.inProgress;

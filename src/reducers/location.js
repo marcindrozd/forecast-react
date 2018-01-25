@@ -1,4 +1,4 @@
-import { FETCH_LOCATION_SUCCESS } from '../actions/types';
+import * as types from 'actions/types';
 
 const initialState = () => (
   {
@@ -8,7 +8,7 @@ const initialState = () => (
 
 const location = (state = initialState(), { type, payload }) => {
   switch (type) {
-    case FETCH_LOCATION_SUCCESS:
+    case types.FETCH_LOCATION_SUCCESS:
       return { ...state, city: payload.location }
     default:
       return state;
@@ -16,3 +16,5 @@ const location = (state = initialState(), { type, payload }) => {
 };
 
 export default location;
+
+export const getLocation = state => state.city;

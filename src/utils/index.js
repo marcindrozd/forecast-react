@@ -1,3 +1,9 @@
+const getLocationAsync = () => (
+  new Promise((resolve, reject) =>
+    navigator.geolocation.getCurrentPosition(resolve, reject)
+  )
+);
+
 export const getUserLocation = async () => {
   if (!navigator.geolocation) {
     return {
@@ -18,9 +24,3 @@ export const getUserLocation = async () => {
     console.error(err);
   }
 };
-
-const getLocationAsync = () => (
-  new Promise((resolve, reject) =>
-    navigator.geolocation.getCurrentPosition(resolve, reject)
-  )
-);
