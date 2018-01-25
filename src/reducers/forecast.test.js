@@ -1,4 +1,4 @@
-import reducer from './forecast';
+import reducer from 'reducers/forecast';
 import * as types from 'actions/types';
 
 describe('forecast reducer', () => {

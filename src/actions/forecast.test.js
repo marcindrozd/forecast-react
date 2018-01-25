@@ -11,16 +11,6 @@ describe('fetchForecastStart', () => {
   });
 });
 
-describe('fetchForecastEnd', () => {
-  it('should create an action informing about fetch end', () => {
-    const expectedAction = {
-      type: types.FETCH_FORECAST_END
-    }
-
-    expect(actions.fetchForecastEnd()).toEqual(expectedAction);
-  });
-});
-
 describe('fetchLocationSuccess', () => {
   it('should create an action with city info', () => {
     const locationInfo = {
