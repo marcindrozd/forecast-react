@@ -7,7 +7,7 @@ const CurrentLocation = ({ location }) => (
   <div className='currentLocation'>
     <div className='title'>
       Current location:
-        </div>
+    </div>
     <div className='location'>
       {location}
     </div>

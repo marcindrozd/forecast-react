@@ -49,7 +49,7 @@ describe('fetchForecastSuccess', () => {
     const expectedAction = {
       type: types.FETCH_FORECAST_SUCCESS,
       payload: {
-        tempByDate: [
+        temperatures: [
           {
             date: '27-01-2018',
             temp: 10

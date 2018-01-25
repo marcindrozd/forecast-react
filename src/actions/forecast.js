@@ -8,7 +8,7 @@ export const fetchForecastSuccess = (forecastData) => (
   {
     type: types.FETCH_FORECAST_SUCCESS,
     payload: {
-      tempByDate: parsedData(forecastData)
+      temperatures: parsedData(forecastData)
     }
   }
 );
@@ -20,11 +20,11 @@ export const fetchForecastFailure = (error) => (
   }
 );
 
-export const fetchLocationSuccess = (locationData) => (
+export const fetchLocationSuccess = ({ city: { name }}) => (
   {
     type: types.FETCH_LOCATION_SUCCESS,
     payload: {
-      location: locationData.city.name
+      location: name
     }
   }
 );

@@ -36,18 +36,18 @@ Forecast.propTypes = {
   forecastData: PropTypes.array.isRequired,
 };
 
-const mapStateToProps = (state) => {
-  return {
+const mapStateToProps = (state) => (
+  {
     isFetching: getIsFetchingStatus(state),
     location: getLocation(state),
     forecastData: getForecastData(state),
   }
-};
+);
 
-const mapDispatchToProps = (dispatch) => {
-  return {
+const mapDispatchToProps = (dispatch) => (
+  {
     fetchForecast: () => dispatch({ type: types.FETCH_FORECAST_REQUEST }),
   }
-};
+);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Forecast);

@@ -6,7 +6,7 @@ import * as api from 'api';
 
 import { fetchForecastByGeolocation } from 'sagas/forecast';
 
-const tempByDate = [
+const temperatures = [
   {
     date: '25-01-2018',
     temp: 10,
@@ -18,7 +18,7 @@ const sampleApiResponse = () => (
     city: {
       name: 'London',
     },
-    tempByDate,
+    temperatures,
   }
 );
 
@@ -33,7 +33,7 @@ describe('fetchForecastByGeolocation', () => {
       expect(saga.next({ status: 200, statusText: 'OK', data: sampleApiResponse() }).value)
         .toEqual(put({ type: types.FETCH_LOCATION_SUCCESS, "payload": { "location": "London" } }));
       expect(saga.next({ status: 200, statusText: 'OK', data: sampleApiResponse() }).value)
-        .toEqual(put({ type: types.FETCH_FORECAST_SUCCESS, "payload": { "tempByDate": [] } }));
+        .toEqual(put({ type: types.FETCH_FORECAST_SUCCESS, "payload": { "temperatures": [] } }));
     });
   });
 });

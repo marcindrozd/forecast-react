@@ -12,7 +12,7 @@ const sampleForecast = [
   },
 ]
 
-const initialState = ({ inProgress = true, city = 'NewYork', tempByDate = sampleForecast }) => (
+const initialState = ({ inProgress = true, city = 'NewYork', temperatures = sampleForecast }) => (
   {
     isFetching: {
       inProgress,
@@ -21,7 +21,7 @@ const initialState = ({ inProgress = true, city = 'NewYork', tempByDate = sample
       city,
     },
     forecast: {
-      tempByDate,
+      temperatures,
     },
   }
 );
