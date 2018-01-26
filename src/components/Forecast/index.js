@@ -6,8 +6,14 @@ import * as types from 'actions/types';
 
 import Spinner from 'components/Spinner';
 import ForecastDetails from 'components/ForecastDetails';
+import ForecastError from 'components/ForecastError';
 
-import { getForecastData, getIsFetchingStatus, getLocation } from 'reducers';
+import {
+  getForecastData,
+  getIsFetchingStatus,
+  getLocation,
+  getErrorMessage,
+} from 'reducers';
 
 class Forecast extends React.Component {
   componentDidMount() {
@@ -16,7 +22,14 @@ class Forecast extends React.Component {
   }
 
   render() {
-    const { isFetching, location, forecastData } = this.props;
+    const { isFetching, location, forecastData, errorMessage } = this.props;
+    const hasError = () => (errorMessage && !forecastData.length);
+
+    if (hasError()) {
+      return (
+        <ForecastError errorMessage={errorMessage} />
+      )
+    }
 
     return (
       <div>
@@ -41,6 +54,7 @@ const mapStateToProps = (state) => (
     isFetching: getIsFetchingStatus(state),
     location: getLocation(state),
     forecastData: getForecastData(state),
+    errorMessage: getErrorMessage(state),
   }
 );
 
