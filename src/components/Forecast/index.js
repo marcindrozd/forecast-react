@@ -22,10 +22,9 @@ class Forecast extends React.Component {
   }
 
   render() {
-    const { isFetching, location, forecastData, errorMessage } = this.props;
-    const hasError = () => (errorMessage && !forecastData.length);
+    const { isFetching, location, forecastData, errorMessage, hasError } = this.props;
 
-    if (hasError()) {
+    if (hasError) {
       return (
         <ForecastError errorMessage={errorMessage} />
       )
@@ -49,12 +48,17 @@ Forecast.propTypes = {
   forecastData: PropTypes.array.isRequired,
 };
 
+const checkErrors = ({ forecastData, errorMessage }) => ({
+  errorMessage,
+  forecastData,
+  hasError: (errorMessage && !forecastData.length),
+});
+
 const mapStateToProps = (state) => (
   {
+    ...checkErrors({ forecastData: getForecastData(state), errorMessage: getErrorMessage(state) }),
     isFetching: getIsFetchingStatus(state),
     location: getLocation(state),
-    forecastData: getForecastData(state),
-    errorMessage: getErrorMessage(state),
   }
 );
 
