@@ -1,0 +1,14 @@
+header {
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 4px;
+  color: salmon;
+}
+
+header .subtitle {
+  margin-top: 0;
+  color: #c3c3c3;
+  font-size: 0.7rem;
+}

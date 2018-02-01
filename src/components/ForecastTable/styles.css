@@ -1,0 +1,20 @@
+.forecastTable {
+  text-align: center;
+  margin-top: 36px;
+}
+
+table {
+  width: 85%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+th {
+  background: #f3f3f3;
+}
